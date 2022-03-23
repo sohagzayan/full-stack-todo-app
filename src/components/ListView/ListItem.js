@@ -1,23 +1,26 @@
 import propsType from 'prop-types';
 import React from 'react';
-import { CustomInput, ListGroupItem } from 'reactstrap';
+import { Button, Input, ListGroupItem } from 'reactstrap';
 
 const ListItem = ({todo , toggleSelect , toggleComplete}) => {
+
+    
     return (
         <ListGroupItem className='d-flex align-item-center'>
-            <CustomInput 
+            <Input 
                 type ="checkbox"
                 id={todo.id}
-                checked ={todo.isSelect}
+                checked ={todo.isSelected}
                 onChange={()=>toggleSelect(todo.id)}
             />
             <div className="mx-3">
                     <h4>{todo.text}</h4>
                     <p>{todo.time.toDateString()}</p>
+                   
             </div>
-            <button className='ml-auto' color={todo.isComplete ? 'danger' : 'success'} onClick={()=>toggleComplete(todo.id)}>
-                    {todo.isComplete ? "Completed" : "Running"}
-            </button>
+            <Button className='ms-auto' color={todo.isCompleted ? 'danger' : 'success'} onClick={()=>toggleComplete(todo.id)}>
+                    {todo.isCompleted ? "Completed" : "Running"}
+            </Button>
         </ListGroupItem>
     );
 };

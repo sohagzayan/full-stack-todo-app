@@ -20,7 +20,7 @@ const ListView = ({todos, toggleSelect , toggleComplete}) => {
 };
 
 
-index.prototype ={
+ListView.prototype ={
     todos : propTypes.object.isRequired,
     toggleSelect : propTypes.func.isRequired,
     toggleComplete :propTypes.func.isRequired

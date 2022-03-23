@@ -4,7 +4,7 @@ import { Table } from 'reactstrap';
 import TableItem from './TableItem';
 
 
-const TableView = ({todos , toggleSelected , toggleCompleted}) => {
+const TableView = ({todos , toggleSelect , toggleComplete}) => {
     return (
         <Table>
             <thead>
@@ -21,8 +21,8 @@ const TableView = ({todos , toggleSelected , toggleCompleted}) => {
                     <TableItem 
                        key={todo.id}
                        todo={todo}
-                       toggleSelected={toggleSelected}
-                       toggleCompleted={toggleCompleted} 
+                       toggleSelect={toggleSelect}
+                       toggleComplete={toggleComplete} 
                     />
 
                    )) 
@@ -33,9 +33,9 @@ const TableView = ({todos , toggleSelected , toggleCompleted}) => {
 };
 
 TableView.propTypes = {
-    todos : propTypes.object.isRequired,
+    todos : propTypes.array.isRequired,
     toggleSelected : propTypes.func.isRequired,
-    toggleCompleted : props.func.isRequired
+    toggleCompleted : propTypes.func.isRequired
 }
 
 export default TableView;
